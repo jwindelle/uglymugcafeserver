@@ -33,14 +33,25 @@ namespace UglyMugCafeServer
             services.AddDbContext<MainDbContext>();
             services.AddTransient<ISignalService, SignalService>();
             services.AddSignalR();
-            services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
+            //services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
+            //{
+            //    builder
+            //    .AllowAnyMethod()
+            //    .AllowAnyHeader()
+            //    .AllowCredentials()
+            //    .AllowAnyOrigin();
+            //.WithOrigins("http://192.168.0.30:4200");
+            //}));
+
+            services.AddCors(options =>
             {
-                builder
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                .AllowCredentials()
-                .WithOrigins("http://localhost:4200");
-            }));
+                options.AddDefaultPolicy(builder =>
+                    builder.SetIsOriginAllowed(_ => true)
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials());
+            });
+
             services.AddMvc(option => option.EnableEndpointRouting = false);
         }
 
@@ -62,11 +73,13 @@ namespace UglyMugCafeServer
             //    endpoints.MapHub<SignalHub>("/signalHub");
             //});
 
-            app.UseCors("CorsPolicy");
+            //app.UseCors("CorsPolicy");
             //app.UseCors(builder => builder
             //    .AllowAnyHeader()
             //    .AllowAnyMethod()
             //    .AllowAnyOrigin());
+
+            app.UseCors();
 
             app.UseSignalR(routes =>
             {

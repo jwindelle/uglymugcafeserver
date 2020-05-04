@@ -8591,11 +8591,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\dotnet\\UglyMugCafeServer\\UglyMugCafeServer.csproj",
+      "projectUniqueName": "D:\\projects\\dotnet\\UglyMugCafeServer\\local\\UglyMugCafeServer.csproj",
       "projectName": "UglyMugCafeServer",
-      "projectPath": "D:\\projects\\dotnet\\UglyMugCafeServer\\UglyMugCafeServer.csproj",
+      "projectPath": "D:\\projects\\dotnet\\UglyMugCafeServer\\local\\UglyMugCafeServer.csproj",
       "packagesPath": "C:\\Users\\janwi\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\dotnet\\UglyMugCafeServer\\obj\\",
+      "outputPath": "D:\\projects\\dotnet\\UglyMugCafeServer\\local\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
